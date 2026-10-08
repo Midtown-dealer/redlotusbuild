@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Redlotus · रक्तकमल</title>
+<meta name="description" content="Redlotus: a student learning, building and drawing in the open. Everything is free to read.">
+<meta property="og:title" content="Redlotus · रक्तकमल">
+<meta property="og:description" content="A student learning, building and drawing in the open.">
+<meta property="og:image" content="https://redlotusbuild.netlify.app/assets/redlotus-pfp.jpg">
+<meta property="og:url" content="https://redlotusbuild.netlify.app/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script>(function(){var t=null;try{t=localStorage.getItem('redlotus-theme')}catch(e){}if(t!=='dark'&&t!=='light')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})();</script>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.hero{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr) 150px;gap:0;align-items:stretch;min-height:clamp(320px,44vw,470px)}
+.c1{--shape:polygon(0 0,100% 0,calc(100% - 70px) 100%,0 100%);margin-right:-34px}
+.c2{--shape:polygon(70px 0,100% 0,calc(100% - 52px) 100%,0 100%);margin-right:-26px}
+.c3{--shape:polygon(52px 0,100% 0,100% 100%,0 100%)}
+.name{display:flex;flex-direction:column;justify-content:flex-end;gap:12px;padding:28px 90px 28px 28px}
+.deva{font:400 clamp(3.2rem,11.5vw,7.4rem)/1.15 Tiro,"Noto Serif Devanagari","Kohinoor Devanagari",serif;margin:0}
+.latin{font-size:.84rem;letter-spacing:.42em;text-transform:uppercase}
+.pond{display:grid;place-items:center;padding:20px 60px}
+.pond .wrap{width:min(100%,250px)}
+.pond .lotus{display:block;width:100%;height:auto;animation:float 7s ease-in-out 2.4s infinite}
+.pond .lotus .pt{transform:rotate(var(--r));animation:bloom 2.4s cubic-bezier(.2,.9,.2,1) both}
+@keyframes bloom{from{transform:rotate(0)}}
+@keyframes float{50%{transform:translateY(-3%)}}
+.stones{display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;gap:12px;padding:22px 18px 22px 50px}
+.zh{writing-mode:vertical-rl;font:400 clamp(1.7rem,3.2vw,2.2rem)/1.1 "Songti SC","Noto Serif CJK SC","Source Han Serif SC","SimSun",serif;letter-spacing:.12em}
+.en{font-size:.78rem;line-height:1.35;text-align:right;color:var(--mute);max-width:11ch}
+.say{max-width:720px}
+.say.big{max-width:860px}.say.big .balloon{font-size:clamp(1.12rem,2.4vw,1.32rem);line-height:1.6;padding:28px 32px}
+.three{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+.three div{padding:6px 18px 6px 0;min-width:0}.three div+div{padding-left:18px;border-left:3px solid var(--ink)}
+.three b{display:block;font-weight:400;font-size:clamp(1.5rem,4.4vw,2.1rem);line-height:1.2}
+.three .now{color:var(--red)}
+.give{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.work{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr)}
+.mine{margin:0;border-right:3px solid var(--ink);position:relative;background:var(--panel)}
+.mine img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
+:root[data-theme="dark"] .mine img{filter:invert(1);mix-blend-mode:screen}
+.mine figcaption{position:absolute;left:12px;bottom:10px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.stars{display:block;color:var(--red);font-size:.9rem;letter-spacing:.2em;margin-bottom:4px}
+.work div{padding:clamp(18px,3vw,28px);display:flex;flex-direction:column;gap:10px;justify-content:center}
+.work b{font-weight:400;font-size:clamp(1.5rem,4vw,2.1rem);line-height:1.2}
+footer img{width:46px;height:46px;border-radius:50%;border:3px solid var(--ink);display:block}
+footer span{display:flex;align-items:center;gap:12px}
+@media (max-width:680px){
+  .hero{grid-template-columns:1fr;min-height:0;gap:0}
+  .c1{--shape:polygon(0 0,100% 0,100% calc(100% - 30px),0 100%);margin:0 0 -16px}
+  .c2{--shape:polygon(0 30px,100% 0,100% calc(100% - 26px),0 100%);margin:0 0 -14px}
+  .c3{--shape:polygon(0 26px,100% 0,100% 100%,0 100%)}
+  .name{padding:28px 20px 48px}.pond{padding:44px 20px}
+  .stones{flex-direction:row;align-items:center;padding:44px 20px 20px}.zh{writing-mode:horizontal-tb;letter-spacing:.06em}.en{max-width:14ch}
+  .three{grid-template-columns:1fr}.three div{padding:12px 0}.three div+div{padding-left:0;border-left:0;border-top:3px solid var(--ink)}
+  .give,.work{grid-template-columns:1fr}.mine{border-right:0;border-bottom:3px solid var(--ink)}
+}
+</style>
+</head>
+<body>
+<button class="toggle" id="toggle" type="button" aria-pressed="false" aria-label="Switch between day and night"><span class="tk"><i class="sun">Day</i><i class="moon">Night</i><span class="knob"><svg class="lotus" viewBox="-250 -246 500 262" aria-hidden="true"><path class="pt" style="--r:-86deg" d="M0,0 C40.0,-45.0 36.8,-108.0 0,-150.0 C-36.8,-108.0 -40.0,-45.0 0,0Z"/><path class="pt" style="--r:86deg" d="M0,0 C40.0,-45.0 36.8,-108.0 0,-150.0 C-36.8,-108.0 -40.0,-45.0 0,0Z"/><path class="pt" style="--r:-58deg" d="M0,0 C46.0,-56.4 42.3,-135.4 0,-188.0 C-42.3,-135.4 -46.0,-56.4 0,0Z"/><path class="pt" style="--r:58deg" d="M0,0 C46.0,-56.4 42.3,-135.4 0,-188.0 C-42.3,-135.4 -46.0,-56.4 0,0Z"/><path class="pt" style="--r:-29deg" d="M0,0 C50.0,-64.2 46.0,-154.1 0,-214.0 C-46.0,-154.1 -50.0,-64.2 0,0Z"/><path class="pt" style="--r:29deg" d="M0,0 C50.0,-64.2 46.0,-154.1 0,-214.0 C-46.0,-154.1 -50.0,-64.2 0,0Z"/><path class="pt" style="--r:0deg" d="M0,0 C52.0,-69.6 47.8,-167.0 0,-232.0 C-47.8,-167.0 -52.0,-69.6 0,0Z"/></svg></span></span></button>
+<main class="page">
+<header class="hero">
+  <div class="cut c1"><div class="in name">
+    <h1 class="deva" lang="sa">रक्तकमल</h1>
+    <div class="latin">Redlotus</div>
+    <div class="half"></div>
+  </div></div>
+  <div class="cut c2" aria-hidden="true"><div class="in pond"><div class="wrap"><svg class="lotus" viewBox="-250 -246 500 262" aria-hidden="true"><path class="pt" style="--r:-86deg" d="M0,0 C40.0,-45.0 36.8,-108.0 0,-150.0 C-36.8,-108.0 -40.0,-45.0 0,0Z"/><path class="pt" style="--r:86deg" d="M0,0 C40.0,-45.0 36.8,-108.0 0,-150.0 C-36.8,-108.0 -40.0,-45.0 0,0Z"/><path class="pt" style="--r:-58deg" d="M0,0 C46.0,-56.4 42.3,-135.4 0,-188.0 C-42.3,-135.4 -46.0,-56.4 0,0Z"/><path class="pt" style="--r:58deg" d="M0,0 C46.0,-56.4 42.3,-135.4 0,-188.0 C-42.3,-135.4 -46.0,-56.4 0,0Z"/><path class="pt" style="--r:-29deg" d="M0,0 C50.0,-64.2 46.0,-154.1 0,-214.0 C-46.0,-154.1 -50.0,-64.2 0,0Z"/><path class="pt" style="--r:29deg" d="M0,0 C50.0,-64.2 46.0,-154.1 0,-214.0 C-46.0,-154.1 -50.0,-64.2 0,0Z"/><path class="pt" style="--r:0deg" d="M0,0 C52.0,-69.6 47.8,-167.0 0,-232.0 C-47.8,-167.0 -52.0,-69.6 0,0Z"/></svg></div></div></div>
+  <div class="cut c3"><div class="in stones"><span class="zh" lang="zh-Hans">摸着石头过河</span><span class="en">Crossing the river by feeling the stones.</span></div></div>
+</header>
+
+<section class="say big tl">
+  <p class="balloon">I know trying to design and manufacture a personal spaceship all on my own might seem outlandish. But despite the doomer narrative around AI, I am hopeful for the future, and all I can guarantee from the present moment is that we will all be awed and surprised by AI capability, but also by human flourishing.<br><br>The future I hope for is one where anybody, in any economic situation, can explore existence the way they wish. I hope to be continually surprised and delighted by the thriving of my peers, fellow eternal students.</p>
+  <span class="who">Redlotus</span>
+</section>
+
+<section class="say tr">
+  <p class="balloon">The five-star project is the one I will keep updating for free. Daily drawings are only for paying members. If you feel generous, help out a student.</p>
+  <span class="who">Redlotus</span>
+</section>
+
+<section class="panel tl">
+  <span class="tab">What gets posted</span>
+  <div class="three">
+    <div><b><span class="stars">★★★★★</span>A light single-person spacecraft</b><span class="now">Free for everyone. Updated as it grows.</span></div>
+    <div><b><span class="stars">★★★★</span>Daily sketching practice</b><span>For paying members, on Patreon.</span></div>
+  </div>
+</section>
+
+<section class="give">
+  <a class="btn red tr" href="https://www.patreon.com/c/redlotusgrows/membership"><b>Join on Patreon</b><span>Daily drawings for members.</span></a>
+  <a class="btn tl" href="https://buymeacoffee.com/redlotusgrows"><b>Buy me a coffee</b><span>A one-time thank you to a student.</span></a>
+</section>
+
+<div class="speed" aria-hidden="true"></div>
+
+<section class="panel flush tr">
+  <span class="tab">The five-star project</span>
+  <div class="work">
+    <figure class="mine"><img src="assets/redlotus-sketch.jpg" width="1060" height="1500" alt="Pencil sketch by Redlotus of a dart-shaped craft with a long pointed nose and a notched tail."><figcaption class="v-own">Drawn by Redlotus</figcaption></figure>
+    <div><b>A spacecraft for one</b><p>The long project: a light craft that carries a single person to space and back. This is where it stands in my own hand.</p><p><a href="petrel/">Claude's study for it: Petrel →</a></p></div>
+  </div>
+</section>
+
+<div class="key" aria-label="Who is speaking">
+  <div class="v-dir"><b>Papyrus</b>Written by Claude, directed by Redlotus.</div>
+  <div class="v-own"><b>Plain type</b>Redlotus's own words, in your device's font.</div>
+  <div class="v-claude"><b>Serif</b>Claude's own opinion.</div>
+</div>
+<footer><span><img src="assets/redlotus-pfp.jpg" width="640" height="640" alt="">Redlotus</span><a href="https://x.com/Redlotus">@Redlotus on X</a></footer>
+</main>
+<script src="assets/site.js"></script>
+</body>
+</html>
