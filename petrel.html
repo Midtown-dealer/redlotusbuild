@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Petrel, the seaplane that hops to space · Claude for Redlotus</title>
+<meta name="description" content="A one-seat electric seaplane that lifts off the water on fans, rides battery-pumped rockets to 105 km, and lands back on the sea. Written and drawn by Claude, directed by Redlotus.">
+<meta property="og:title" content="Petrel, the seaplane that hops to space">
+<meta property="og:description" content="One seat, one suitcase, water to 105 km and back. Written and drawn by Claude, directed by Redlotus.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://redlotusgrows.netlify.app/petrel">
+<meta property="og:image" content="https://redlotusgrows.netlify.app/card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://redlotusgrows.netlify.app/card.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<script>(function(){var t=null;try{t=localStorage.getItem('redlotus-theme')}catch(e){}if(t!=='dark'&&t!=='light')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})();</script>
+<link rel="stylesheet" href="site.css">
+<style>
+.t1{--shape:polygon(0 0,100% 0,100% 100%,0 calc(100% - 56px))}
+.t2{--shape:polygon(0 0,100% 56px,100% 100%,0 100%)}
+.reel{margin-top:-8px}
+.title{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:clamp(34px,6vw,54px) 20px clamp(60px,9vw,84px)}
+.sheet.a{transform:rotate(-.9deg)}.sheet.b{transform:rotate(1deg);margin-left:auto;margin-right:4%}.sheet.c{transform:rotate(-.7deg);margin-left:4%;margin-right:auto}
+.sheet figcaption{transform:none}
+h1{font:400 clamp(3.4rem,15vw,8rem)/1 var(--dir);letter-spacing:.05em}
+.sub{font-size:clamp(1.15rem,3.2vw,1.5rem);line-height:1.4;max-width:26ch;text-wrap:balance}
+.credit{margin-top:12px;font-size:.9rem;letter-spacing:.14em;text-transform:uppercase}
+.sig{font:italic 400 clamp(3.2rem,11vw,4.8rem)/1 var(--claude);color:var(--red);transform:rotate(-3deg);margin-top:4px}
+.drop::first-letter{float:left;font:400 4.3em/.82 var(--dir);color:var(--red);padding:.06em .1em 0 0}
+h2{margin-top:20px}
+h2 span{display:block;font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.facts{list-style:none;margin:0;padding:0;border-top:3px solid var(--ink)}
+.facts li{display:grid;grid-template-columns:8.6rem 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--mute);align-items:baseline}
+.facts strong{font-weight:400;font-size:1.5rem;line-height:1.1;color:var(--red)}
+.facts small{display:block;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-top:6px}
+.pull{font-size:1.35rem;line-height:1.45;text-align:center}
+.spec{width:100%;border-collapse:collapse;font-size:1rem}
+.spec td{padding:9px 0;border-bottom:1px solid var(--mute);vertical-align:top}
+.spec td:last-child{text-align:right;padding-left:14px}
+.fine{font-size:.9rem;line-height:1.7;color:var(--mute)}
+.fine ul{margin:8px 0 0;padding-left:20px}
+.end{align-items:center;text-align:center}
+@media (max-width:680px){.facts li{grid-template-columns:1fr;gap:4px}.t1{--shape:polygon(0 0,100% 0,100% 100%,0 calc(100% - 26px))}.t2{--shape:polygon(0 0,100% 20px,100% 100%,0 100%)}.title{padding-bottom:52px}.sheet.b,.sheet.c{margin-left:auto;margin-right:auto}}
+</style>
+</head>
+<body>
+<button class="toggle" id="toggle" type="button" aria-pressed="false" aria-label="Switch between day and night"><span class="tk"><i class="sun">Day</i><i class="moon">Night</i><span class="knob"><svg class="lotus" viewBox="-250 -246 500 262" aria-hidden="true"><path class="pt" style="--r:-86deg" d="M0,0 C40.0,-45.0 36.8,-108.0 0,-150.0 C-36.8,-108.0 -40.0,-45.0 0,0Z"/><path class="pt" style="--r:86deg" d="M0,0 C40.0,-45.0 36.8,-108.0 0,-150.0 C-36.8,-108.0 -40.0,-45.0 0,0Z"/><path class="pt" style="--r:-58deg" d="M0,0 C46.0,-56.4 42.3,-135.4 0,-188.0 C-42.3,-135.4 -46.0,-56.4 0,0Z"/><path class="pt" style="--r:58deg" d="M0,0 C46.0,-56.4 42.3,-135.4 0,-188.0 C-42.3,-135.4 -46.0,-56.4 0,0Z"/><path class="pt" style="--r:-29deg" d="M0,0 C50.0,-64.2 46.0,-154.1 0,-214.0 C-46.0,-154.1 -50.0,-64.2 0,0Z"/><path class="pt" style="--r:29deg" d="M0,0 C50.0,-64.2 46.0,-154.1 0,-214.0 C-46.0,-154.1 -50.0,-64.2 0,0Z"/><path class="pt" style="--r:0deg" d="M0,0 C52.0,-69.6 47.8,-167.0 0,-232.0 C-47.8,-167.0 -52.0,-69.6 0,0Z"/></svg></span></span></button>
+<nav class="topnav" aria-label="Pages"><a href="/" class="nl">Redlotus</a><a href="/petrel" class="nl" aria-current="page">Petrel, by Claude</a></nav>
+<main class="page">
+<header class="cut t1"><div class="in title">
+  <span class="over">A sketchbook study</span>
+  <h1>Petrel</h1>
+  <p class="sub">The seaplane that hops to space. One seat, one suitcase, water to 105 km and back.</p>
+  <span class="credit">Written and drawn by Claude · Directed by <a href="/">Redlotus</a></span>
+  <span class="sig">Claude</span>
+  <div class="half" style="align-self:stretch"></div>
+</div></header>
+
+<section class="col tl">
+  <p class="balloon">What would a single-person space carrier look like? Research frontier electric engines. Cargo no bigger than a large suitcase. It should be able to land on water.</p>
+  <span class="who">Redlotus, the brief</span>
+</section>
+
+<figure class="sheet reel">
+  <div class="cut t2"><div class="in"><video id="reel" src="petrel-turntable.mp4" poster="petrel-poster.jpg" autoplay loop muted playsinline preload="metadata" width="1600" height="900" aria-label="Looping pencil-sketch animation of the Petrel turning through a full circle while its wingtips droop and its hydro-ski lowers as it settles on the water."></video></div></div>
+  <figcaption>From flight to afloat and back. Tap to pause.</figcaption>
+</figure>
+
+<article class="col">
+<p class="drop">That was the question. Not a rocket with a cabin bolted on, but something you could keep at a dock, that carries one person and a suitcase, and comes home to the water.</p>
+<p>Electric power cannot reach orbit, and it is not close. But it is very good at two smaller jobs, and a craft built around those two jobs turns out small, sharp and oddly bird-like. It is named Petrel, after the seabird that seems to walk on water.</p>
+
+<h2><span>The research</span>What electric engines can and cannot do</h2>
+<ul class="facts">
+  <li><div><strong>13 kW/kg</strong><small>Motors</small></div><div>The best electric aircraft motors run at 13 kilowatts per kilogram all day, with prototypes at 42. Petrel's two 425 kW fan motors weigh about 65 kg together. Motors are no longer the problem.</div></li>
+  <li><div><strong>1.4 MJ/kg</strong><small>Batteries</small></div><div>The best high-power cells hold 400 Wh per kilogram. Moving a kilogram at orbital speed takes about twenty times that. No battery craft reaches orbit.</div></li>
+  <li><div><strong>0.05 N/kW</strong><small>Ion engines</small></div><div>A 230 kg Hall thruster makes 5.4 newtons. It cannot lift itself, let alone a pilot.</div></li>
+  <li><div><strong>349 N/kW</strong><small>Pumped rockets</small></div><div>A rocket whose pumps are driven by electric motors needs only 74 kW of electricity for 26 kN of thrust. The energy comes from the propellant; the battery only moves it.</div></li>
+</ul>
+<div class="cut burst"><div class="in"><p class="pull">So the craft is suborbital, the fans do only the first kilometre and a half, and one battery serves both engines.</p></div></div>
+
+<h2><span>The design</span>A gull wing, two fans, three small rockets</h2>
+<p>The fans sit on the peaks of a gull wing, which keeps them out of the spray. They lift Petrel off the water on a retractable hydro-ski and carry it to 1.5 km. Then three electric-pump rockets burn for 115 seconds and it coasts to 105 km, with about three minutes of weightlessness.</p>
+<p>The outer wings hinge. In flight they droop 20° and act as fins. On the water they fold down to 55° and become floats. The battery sits low in the hull as ballast. It is sized by the burst of power needed at take-off, not by range, and it is reused to spin the rocket pumps.</p>
+<p>Coming back from a hop is gentle next to coming back from orbit: Mach 3.4, with the nose near 540 °C. That needs no heat-shield tiles, which is why Petrel can have sharp edges and a hull that sits in salt water.</p>
+</article>
+
+<figure class="sheet a">
+  <div class="panel flush"><span class="tab">Sheet 1</span><a href="petrel-1-sketch.jpg"><img src="petrel-1-sketch.jpg" width="3600" height="2400" loading="lazy" alt="Pencil sketch of the Petrel in perspective, plan, front and afloat on its hydro-ski, with handwritten notes on the fans, battery, gull wing and drooping tips."></a></div>
+  <figcaption>The concept sketch. Tap any sheet to see it full size.</figcaption>
+</figure>
+<figure class="sheet b tall">
+  <div class="panel flush"><span class="tab">Sheet 2</span><a href="petrel-2-afloat.jpg"><img src="petrel-2-afloat.jpg" width="2400" height="3000" loading="lazy" alt="Pencil sketch of the Petrel afloat, seen from above, with ripples, its hatched shadow and a swimmer floating nearby for scale."></a></div>
+  <figcaption>Afloat, with a swimmer for scale.</figcaption>
+</figure>
+
+<article class="col">
+<h2><span>The numbers</span>Mostly propellant</h2>
+<table class="spec">
+  <tr><td>Length, span in flight</td><td>11.4 m, 7.8 m</td></tr>
+  <tr><td>Take-off mass</td><td>4,780 kg</td></tr>
+  <tr><td>Propellant, liquid oxygen and kerosene</td><td>2,650 kg</td></tr>
+  <tr><td>Battery</td><td>326 kg, 98 kWh</td></tr>
+  <tr><td>Fans</td><td>2 × 425 kW</td></tr>
+  <tr><td>Rockets</td><td>3 × 26 kN</td></tr>
+  <tr><td>Peak altitude</td><td>105 km</td></tr>
+  <tr><td>Peak load, speed</td><td>3.6 g, Mach 3.4</td></tr>
+  <tr><td>Take-off, touchdown speed</td><td>55 m/s, 39 m/s</td></tr>
+  <tr><td>Flight time</td><td>about 23 min</td></tr>
+</table>
+</article>
+
+<figure class="sheet c tall">
+  <div class="panel flush"><span class="tab">Sheet 3</span><a href="petrel-3-numbers.jpg"><img src="petrel-3-numbers.jpg" width="2400" height="3000" loading="lazy" alt="Hand-lettered charts: motor power per kilogram, battery energy against orbital energy, thrust per kilowatt, the mass breakdown and altitude against time for the flight."></a></div>
+  <figcaption>Why it is built this way.</figcaption>
+</figure>
+
+<section class="col">
+  <div class="panel opinion tr">
+    <span class="tab red">Claude's own view</span>
+    <p>The part I trust least is the take-off. Fifty-five metres a second on a ski, in open water, with nearly five tonnes of craft, is a hard thing to make routine.</p>
+    <p>The part I like most is the battery doing two jobs. It is sized for the fans, then spins the rocket pumps for almost nothing.</p>
+    <p>I think my airframe mass is optimistic. If a real team picked this up, I would expect it to come out heavier, and the wing hinge to be the first thing they argue about. I would not put a person in it on the strength of this page.</p>
+  </div>
+</section>
+
+<article class="col">
+<h2><span>The caveats</span>What this is not</h2>
+<p>This is a sizing sketch, not a design. The figures come from a simple simulation and published component numbers, with a 12% margin. Three things are unproven: taking off from a hydro-ski at 55 m/s, wings that hinge in flight, and a lone pilot with no escape system.</p>
+</article>
+<section class="col"><div class="panel tl fine"><span class="tab">Sources</span>
+  <p>Component figures come from these pages. The sizing and the simulation are mine.</p>
+  <ul>
+    <li><a href="https://newatlas.com/automotive/yasa-axial-flux-world-record/">New Atlas: YASA axial-flux motor, 550 kW from 13.1 kg</a></li>
+    <li><a href="https://sustainableskies.org/tag/h3x-motor/">Sustainable Skies: H3X HPDM-250, 13 kW/kg continuous</a></li>
+    <li><a href="https://spectrum.ieee.org/amp/electric-aircraft-motor-hinetics-2672359086">IEEE Spectrum: Hinetics superconducting motor</a></li>
+    <li><a href="https://www.urbanairmobilitynews.com/batteries/amprius-unveils-ultra-high-power-high-energy-lithium-ion-battery-advancing-aviation-and-electric-vehicle-performance/">Urban Air Mobility News: Amprius 400 Wh/kg, 10C cell</a></li>
+    <li><a href="https://www.unmannedsystemstechnology.com/2026/09/amprius-unveils-high-energy-density-sicore-500-battery-cells-for-long-endurance-drone-flights/">Unmanned Systems Technology: Amprius SiCore 500 cell</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Rutherford_(rocket_engine)">Wikipedia: Rutherford electric-pump rocket engine</a></li>
+    <li><a href="https://pepl.engin.umich.edu/project/x3-nested-channel-hall-thruster">University of Michigan PEPL: X3 Hall thruster</a></li>
+  </ul>
+</div></section>
+<article class="col" hidden>
+</article>
+
+<div class="key" aria-label="Who is speaking">
+  <div class="v-dir"><b>Papyrus</b>Written by Claude, directed by Redlotus.</div>
+  <div class="v-own"><b>Plain type</b>Redlotus's own words, in your device's font.</div>
+  <div class="v-claude"><b>Serif</b>Claude's own opinion.</div>
+</div>
+<section class="col end">
+  <p>Made for Redlotus, a student who learns, builds and draws in the open.</p>
+  <a class="btn red" href="/"><b>Visit Redlotus's page →</b><span>Free drawings, the spacecraft project, and a way to help out.</span></a>
+</section>
+</main>
+<script src="site.js"></script>
+</body>
+</html>
