@@ -1,0 +1,94 @@
+@font-face{font-family:"IM Fell";font-display:swap;src:url(fonts/im-fell-english-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"IM Fell";font-style:italic;font-display:swap;src:url(fonts/im-fell-english-latin-400-italic.woff2) format("woff2")}
+@font-face{font-family:"Instrument Serif";font-display:swap;src:url(fonts/instrument-serif-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Instrument Serif";font-style:italic;font-display:swap;src:url(fonts/instrument-serif-latin-400-italic.woff2) format("woff2")}
+@font-face{font-family:Tiro;font-display:swap;src:url(fonts/tiro-devanagari-sanskrit-devanagari-400-normal.woff2) format("woff2")}
+
+/* Day: a beige manuscript inked like a black-and-white comic. Night: the same comic inverted, white on black. Red is the only colour.
+   Three voices, three typefaces:
+   .v-dir    Papyrus           written by Claude, directed by Redlotus
+   .v-own    the device's font Redlotus's own words
+   .v-claude Instrument Serif  Claude's own opinion */
+:root{--bg:#E3D5B5;--panel:#EBDFC2;--ink:#14100E;--mute:#5E5143;--red:#C2201B;--grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .32  0 0 0 0 .22  0 0 0 0 .1  0 0 0 .55 -.16'/%3E%3C/filter%3E%3Crect width='320' height='320' filter='url(%23n)'/%3E%3C/svg%3E");--fx:none;--open:1;
+  --dir:Papyrus,"IM Fell",Georgia,serif;--own:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--claude:"Instrument Serif",Georgia,serif;color-scheme:light}
+:root[data-theme="dark"]{--bg:#0A0909;--panel:#121010;--ink:#F5F2EC;--mute:#A7A098;--red:#FF3B30;--grain:none;--fx:grayscale(1) invert(1) contrast(1.5);--open:.4;color-scheme:dark}
+*{box-sizing:border-box}
+html{overflow-x:clip;background:var(--grain),var(--bg);transition:background-color .4s}
+body{margin:0;overflow-x:clip;color:var(--ink);font:400 1.1rem/1.75 var(--dir);transition:background-color .4s,color .4s;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--red);text-underline-offset:3px}
+a:hover{color:var(--red)}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+p{margin:0}
+.v-dir{font-family:var(--dir)}.v-own{font-family:var(--own)}.v-claude{font-family:var(--claude)}
+
+.page{max-width:1080px;margin:0 auto;padding:76px max(18px,env(safe-area-inset-left)) 90px;display:flex;flex-direction:column;gap:clamp(40px,7vw,64px)}
+.col{max-width:680px;margin:0 auto;width:100%;display:flex;flex-direction:column;gap:20px}
+
+/* comic panel: heavy ink border, halftone drop shadow, caption tab */
+.panel{position:relative;border:3px solid var(--ink);background:var(--panel);padding:clamp(18px,4vw,34px)}
+.panel::after{content:"";position:absolute;inset:12px -12px -12px 12px;z-index:-1;background:radial-gradient(var(--ink) 1.3px,transparent 1.7px) 0 0/7px 7px}
+.panel.flush{padding:0}
+.tab{position:absolute;top:-16px;left:14px;background:var(--ink);color:var(--bg);font:400 .72rem/1 var(--dir);letter-spacing:.24em;text-transform:uppercase;padding:8px 12px 7px}
+.tab.red{background:var(--red);color:#fff}
+.half{height:26px;background:radial-gradient(var(--ink) 1.6px,transparent 2px) 0 0/9px 9px;-webkit-mask:linear-gradient(90deg,#000,transparent);mask:linear-gradient(90deg,#000,transparent);opacity:.75}
+
+h1,h2{font-weight:400;margin:0;text-wrap:balance}
+h2{font:400 clamp(1.6rem,5vw,2.2rem)/1.2 var(--dir)}
+.over{font-size:.76rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mute)}
+
+/* speech balloon: Redlotus's own words, in the device's own font */
+.balloon{position:relative;border:3px solid var(--ink);border-radius:30px;background:var(--panel);padding:22px 26px;font:400 1.12rem/1.55 var(--own)}
+.balloon::before{content:"";position:absolute;left:44px;bottom:-17px;width:28px;height:28px;background:var(--panel);border-right:3px solid var(--ink);border-bottom:3px solid var(--ink);transform:skewX(28deg) rotate(45deg)}
+.who{display:block;margin-top:26px;font:400 .74rem var(--own);letter-spacing:.22em;text-transform:uppercase;color:var(--mute);padding-left:30px}
+/* caption box: Claude's own opinion */
+.opinion{font:400 1.32rem/1.5 var(--claude)}
+.opinion p+p{margin-top:14px}
+
+.key{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:3px solid var(--ink);font-size:.95rem;line-height:1.4}
+.key div{padding:14px 16px;min-width:0}.key div+div{border-left:3px solid var(--ink)}
+.key b{display:block;font-weight:400;font-size:1.25rem;margin-bottom:4px}
+
+.sheet{margin:0;display:flex;flex-direction:column;gap:14px}
+.sheet.tall{max-width:740px;margin:0 auto;width:100%}
+.sheet img,.sheet video{display:block;width:100%;height:auto;filter:var(--fx);transition:filter .5s}
+.sheet video{cursor:pointer}
+.sheet figcaption{font-size:.98rem;color:var(--mute);padding-left:4px}
+
+.lotus{overflow:visible;color:var(--red)}
+.lotus .pt{fill:var(--red);stroke:var(--panel);stroke-width:6;stroke-linejoin:round;transform:rotate(calc(var(--r)*var(--open)));transition:transform .9s cubic-bezier(.3,1.4,.4,1),fill .4s}
+.toggle{position:fixed;top:max(14px,env(safe-area-inset-top));right:max(18px,env(safe-area-inset-right));z-index:10;border:0;background:none;padding:0;cursor:pointer}
+.tk{display:block;position:relative;width:112px;height:44px;border:3px solid var(--ink);transform:skewX(-14deg);background:linear-gradient(104deg,#E3D5B5 0 50%,#0A0909 50% 100%);box-shadow:5px 5px 0 var(--red);overflow:hidden;transition:box-shadow .2s}
+.toggle:hover .tk{box-shadow:2px 2px 0 var(--red)}
+.tk i{position:absolute;top:0;height:100%;width:50%;display:grid;place-items:center;font:normal 400 .6rem/1 var(--dir);letter-spacing:.14em;text-transform:uppercase;transform:skewX(14deg)}
+.tk .sun{left:0;color:#14100E}.tk .moon{right:0;color:#F5F2EC}
+.knob{position:absolute;top:0;left:0;width:50%;height:100%;background:var(--panel);border-right:3px solid var(--ink);display:grid;place-items:center;transition:transform .55s cubic-bezier(.5,1.5,.5,1),background-color .4s}
+.knob .lotus{width:40px;height:22px;transform:skewX(14deg);transition:transform .55s}
+:root[data-theme="dark"] .knob{transform:translateX(100%);border-right:0;border-left:3px solid var(--ink)}
+:root[data-theme="dark"] .knob .lotus{transform:skewX(14deg) rotate(360deg)}
+.topnav{position:absolute;top:max(18px,env(safe-area-inset-top));left:max(18px,env(safe-area-inset-left));z-index:9;display:flex;gap:10px;flex-wrap:wrap}
+.nl{font:400 .74rem/1 var(--dir);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border:3px solid var(--ink);background:var(--panel);padding:9px 12px 8px;box-shadow:4px 4px 0 var(--ink);transform:skewX(-8deg)}
+.nl:hover{color:var(--red);border-color:var(--red)}
+.nl[aria-current]{background:var(--ink);color:var(--bg)}
+@media (max-width:680px){.topnav{gap:6px}.nl{font-size:.56rem;letter-spacing:.1em;padding:6px 7px 5px;box-shadow:3px 3px 0 var(--ink)}.page{padding-top:92px}}
+/* dynamic framing: tilted panels, slanted cuts with diagonal gutters, a burst */
+.tl{transform:rotate(-1.1deg)}.tr{transform:rotate(.9deg)}
+.panel.tl::after,.panel.tr::after{display:none}.panel.tl,.panel.tr{box-shadow:9px 9px 0 var(--ink)}
+.cut{background:var(--ink);padding:4px;clip-path:var(--shape)}
+.cut>.in{background:var(--panel);clip-path:var(--shape);height:100%}
+.burst{--shape:polygon(4% 14%,17% 3%,30% 12%,44% 0,56% 11%,71% 2%,82% 13%,97% 8%,93% 30%,100% 48%,94% 66%,99% 88%,84% 86%,72% 99%,58% 88%,44% 100%,31% 87%,16% 97%,8% 82%,0 70%,6% 50%,1% 32%)}
+.burst>.in{padding:13% 12%}
+.speed{height:34px;background:repeating-linear-gradient(100deg,var(--ink) 0 2px,transparent 2px 13px);-webkit-mask:linear-gradient(90deg,transparent,#000 40%,transparent);mask:linear-gradient(90deg,transparent,#000 40%,transparent);opacity:.7}
+.btn{display:block;border:3px solid var(--ink);background:var(--panel);padding:18px 22px;text-decoration:none;box-shadow:6px 6px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.btn b{display:block;font-weight:400;font-size:1.35rem;line-height:1.25}
+.btn span{font-size:.95rem;color:var(--mute)}
+.btn.red{background:var(--red);border-color:var(--red);color:#fff;box-shadow:6px 6px 0 var(--ink)}.btn.red span{color:#ffe3de}
+.btn:hover{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--ink);color:inherit}.btn.red:hover{color:#fff}
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;border-top:3px solid var(--ink);padding-top:18px;font-size:.95rem;color:var(--mute)}
+
+@media (max-width:680px){
+  body{font-size:1.04rem}
+  .panel::after{inset:8px -8px -8px 8px}
+  .key{grid-template-columns:1fr}.key div+div{border-left:0;border-top:3px solid var(--ink)}
+  .tk{width:92px;height:38px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
